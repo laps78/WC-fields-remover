@@ -1,4 +1,4 @@
-<? php 
+<?php 
 
 /*
  * Plugin Name: L.A.P.S. WC order fields remover
@@ -15,10 +15,7 @@
  *
  * Network: true
  */
-
- add_filter( 'woocommerce_checkout_fields', 'fields_remover',);
-
- function fields_remover($fields) {
+  function fields_remover($fields) {
   
   // hide the billing fields
   unset($fields["billing"]["billing_first_name"]);
@@ -48,3 +45,6 @@
   // hide order fields
   unset($fields["order"]["order_comments"]);
  };
+
+ add_filter( 'woocommerce_checkout_fields', 'fields_remover',);
+ 
